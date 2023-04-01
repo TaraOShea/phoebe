@@ -28,10 +28,15 @@ export default defineType({
       validation: (rule)  => rule.max(1).error('You can only have 1 Category'),   
       of: [{type: 'categories'}],
     }),
+    // defineField({
+    //   name: 'overview',
+    //   title: 'Description',
+    //   type: 'blockContent',
+    // }),
     defineField({
-      name: 'overview',
+      name: 'description',
       title: 'Description',
-      type: 'blockContent',
+      type: 'string',
     }),
     defineField({
       name: 'publishDate',
