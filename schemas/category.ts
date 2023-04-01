@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {MdPerson as icon} from 'react-icons/md'
+import {GiChecklist as icon} from "react-icons/gi"
 
 export default defineType({
   name: 'category',
