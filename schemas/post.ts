@@ -53,10 +53,17 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'gallery',
-      title: 'Gallery Images',
-      type: 'array',
-      of: [{ type: 'image', options: { hotspot: true } }],
+      name: 'images',
+      title: 'Images',
+     type:'array',
+     of: [
+       {
+        type: 'image', name: 'image',
+          options: {
+           hotspot: true,
+          },
+       }
+     ]
     }),
   ],
   preview: {
