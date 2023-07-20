@@ -40,7 +40,7 @@ export default defineType({
     }),
     defineField({
       name: 'publishDate',
-      title: 'Publish Date',
+      title: 'Publish Date test',
       type: 'datetime',
     }),
       defineField({
