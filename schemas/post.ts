@@ -45,9 +45,9 @@ export default defineType({
     }),
     defineField({
       name: 'poster',
-      title: 'Image',
-      type: 'image',
-      validation: (rule)  => rule.required(),
+      title: 'Images',
+      type: 'array',
+      of: [{ type: 'image' }], // Use 'image' type to reference images
       options: {
         hotspot: true,
       },
