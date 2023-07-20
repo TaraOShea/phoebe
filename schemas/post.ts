@@ -43,14 +43,12 @@ export default defineType({
       title: 'Publish Date',
       type: 'datetime',
     }),
-    defineField({
+      defineField({
       name: 'poster',
-      title: 'Image',
-      type: 'image',
-      validation: (rule)  => rule.required(),
-      options: {
-        hotspot: true,
-      },
+      title: 'Images',
+      type: 'array', // Use 'array' type to allow multiple images
+      of: [{ type: 'image', options: { hotspot: true } }], // 'image' type with hotspot option
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
