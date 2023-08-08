@@ -75,7 +75,7 @@ export default defineType({
       title: 'title',
       date: 'publishDate',
       media: 'poster',
-      category: 'post_category.0.title'
+      category: 'post_category.0.title',
     },
     prepare(selection) {
      // const categories = selection.post_category.map(category => category.title).join(', ');
