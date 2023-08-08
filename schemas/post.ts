@@ -58,7 +58,7 @@ export default defineType({
       title: 'title',
       date: 'publishDate',
       media: 'poster',
-      category: 'post_category.0.title'
+      category: 'post_category.0.name',
     },
     prepare(selection) {
 
