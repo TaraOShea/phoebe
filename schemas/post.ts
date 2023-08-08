@@ -78,22 +78,45 @@ export default defineType({
       category: 'post_category'
     },
     prepare(selection) {
-
       console.log('Selection:', selection);
-      const category = selection.category[0]?.category_list; // Assuming category[0] is the correct index
-      const categoryTitle = category ? category.title : 'No Category'; //
-
-      if (categoryTitle) {
-        console.log('Category Title:', categoryTitle);
+      
+      const categoryArray = selection.category;
+      console.log('Category Array:', categoryArray);
+      
+      if (categoryArray && categoryArray.length > 0) {
+        const categoryObject = categoryArray[0];
+        console.log('Category Object:', categoryObject);
+    
+        const categoryList = categoryObject.category_list;
+        console.log('Category List:', categoryList);
+    
+        const categoryTitle = categoryList ? categoryList.title : 'No Category';
+    
+        console.log('Title:', selection.title);
+        console.log('Date:', selection.date);
+        console.log('Category:', categoryTitle);
+        console.log('Media:', selection.media);
+    
+        return {
+          title: selection.title,
+          date: selection.date,
+          subtitle: categoryTitle,
+          media: selection.media,
+        };
+      } else {
+        console.log('No Category Found');
+        
+        console.log('Title:', selection.title);
+        console.log('Date:', selection.date);
+        console.log('Media:', selection.media);
+    
+        return {
+          title: selection.title,
+          date: selection.date,
+          subtitle: selection.date,
+          media: selection.media,
+        };
       }
-
-
-      return {
-        title: selection.title,
-        date: selection.date,
-        subtitle: selection.date,
-        media: selection.media,
-      }
-    },
+    }
   },
 })
