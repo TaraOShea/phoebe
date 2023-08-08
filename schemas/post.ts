@@ -80,12 +80,11 @@ export default defineType({
     prepare(selection) {
 
       console.log('Selection:', selection);
+      const category = selection.category[0]?.category_list; // Assuming category[0] is the correct index
+      const categoryTitle = category ? category.title : 'No Category'; //
 
-      if (!selection.post_category) {
-        console.log('post_category is undefined');
-      } else {
-        console.log('post_category:', selection.post_category);
-        console.log('Category Title:', selection.post_category[0]?.title);
+      if (categoryTitle) {
+        console.log('Category Title:', categoryTitle);
       }
 
 
