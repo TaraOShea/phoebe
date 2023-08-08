@@ -71,14 +71,15 @@ export default defineType({
       title: 'title',
       date: 'publishDate',
       media: 'poster',
-      subtitle: 'post_category',
+      category: 'post_category.0.title',
+      subtitle: 'post_category.0.title',
     },
     prepare(selection) {
 
       return {
         title: selection.title,
         date: selection.date,
-        subtitle: selection.subtitle,
+        subtitle: selection.category, 
         media: selection.media,
       }
     },
