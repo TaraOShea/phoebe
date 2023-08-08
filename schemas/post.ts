@@ -100,7 +100,7 @@ export default defineType({
         return {
           title: selection.title,
           date: selection.date,
-          subtitle: categoryTitle,
+          subtitle: selection.date,
           media: selection.media,
         };
       } else {
