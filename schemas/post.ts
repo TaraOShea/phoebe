@@ -78,7 +78,7 @@ export default defineType({
       return {
         title: selection.title,
         date: selection.date,
-        subtitle: selection.date,
+        subtitle: selection.subtitle,
         media: selection.media,
       }
     },
