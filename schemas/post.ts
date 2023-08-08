@@ -52,6 +52,23 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'gallery',
+      title: 'Gallery Images',
+      type: 'array',
+      of: [{ type: 'image', options: { hotspot: true } }],
+      name: 'images',
+      title: 'Images',
+     type:'array',
+     of: [
+       {
+        type: 'image', name: 'image',
+          options: {
+           hotspot: true,
+          },
+       }
+     ]
+    }),
   ],
   preview: {
     select: {
@@ -61,12 +78,12 @@ export default defineType({
       category: 'post_category.0.title'
     },
     prepare(selection) {
-      const categories = selection.post_category.map(category => category.title).join(', ');
+     // const categories = selection.post_category.map(category => category.title).join(', ');
 
       return {
         title: selection.title,
         date: selection.date,
-        subtitle: categories,
+        subtitle: selection.category,
         media: selection.media,
       }
     },
