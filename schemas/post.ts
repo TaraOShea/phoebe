@@ -78,14 +78,26 @@ export default defineType({
       category: 'post_category.0.title',
     },
     prepare(selection) {
-     // const categories = selection.post_category.map(category => category.title).join(', ');
-
+      console.log('Selection:', selection); // Log the entire selection object
+      
+      console.log('Title:', selection.title); // Log the title
+      console.log('Date:', selection.date); // Log the date
+      console.log('Category:', selection.category); // Log the category
+      console.log('Media:', selection.media); // Log the media
+      
+      const categories = selection.post_category.map(category => {
+        console.log('Category Object:', category); // Log the entire category object
+        console.log('Category Title:', category.title); // Log the category title
+        return category.title;
+      }).join(', ');
+      console.log('Categories:', categories); // Log the joined category titles
+      
       return {
         title: selection.title,
         date: selection.date,
-        subtitle: selection.category,
+        subtitle: categories,
         media: selection.media,
-      }
+      };
     },
   },
 })
