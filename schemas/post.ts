@@ -52,6 +52,23 @@ export default defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: 'gallery',
+      title: 'Gallery Images',
+      type: 'array',
+      of: [{ type: 'image', options: { hotspot: true } }],
+      name: 'images',
+      title: 'Images',
+     type:'array',
+     of: [
+       {
+        type: 'image', name: 'image',
+          options: {
+           hotspot: true,
+          },
+       }
+     ]
+    }),
   ],
   preview: {
     select: {
@@ -61,6 +78,16 @@ export default defineType({
       category: 'post_category.0.title'
     },
     prepare(selection) {
+
+      console.log('Selection:', selection);
+
+      if (!selection.post_category) {
+        console.log('post_category is undefined');
+      } else {
+        console.log('post_category:', selection.post_category);
+        console.log('Category Title:', selection.post_category[0]?.title);
+      }
+
 
       return {
         title: selection.title,
