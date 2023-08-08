@@ -61,11 +61,12 @@ export default defineType({
       category: 'post_category.0.title'
     },
     prepare(selection) {
+      const categories = selection.post_category.map(category => category.title).join(', ');
 
       return {
         title: selection.title,
         date: selection.date,
-        subtitle: selection.date,
+        subtitle: categories,
         media: selection.media,
       }
     },
