@@ -75,48 +75,7 @@ export default defineType({
       title: 'title',
       date: 'publishDate',
       media: 'poster',
-      category: 'post_category'
+      category: 'post_category[0].name'
     },
-    prepare(selection) {
-      console.log('Selection:', selection);
-      
-      const categoryArray = selection.category;
-      console.log('Category Array:', categoryArray);
-      
-      if (categoryArray && categoryArray.length > 0) {
-        const categoryObject = categoryArray[0];
-        console.log('Category Object:', categoryObject);
-    
-        const categoryList = categoryObject.category_list;
-        console.log('Category List:', categoryList);
-    
-        const categoryTitle = categoryList ? categoryList.title : 'No Category';
-    
-        console.log('Title:', selection.title);
-        console.log('Date:', selection.date);
-        console.log('Category:', categoryTitle);
-        console.log('Media:', selection.media);
-    
-        return {
-          title: selection.title,
-          date: selection.date,
-          subtitle: selection.date,
-          media: selection.media,
-        };
-      } else {
-        console.log('No Category Found');
-        
-        console.log('Title:', selection.title);
-        console.log('Date:', selection.date);
-        console.log('Media:', selection.media);
-    
-        return {
-          title: selection.title,
-          date: selection.date,
-          subtitle: selection.date,
-          media: selection.media,
-        };
-      }
-    }
   },
 })
