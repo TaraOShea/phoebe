@@ -75,7 +75,7 @@ export default defineType({
       title: 'title',
       date: 'publishDate',
       media: 'poster',
-      category: 'post_category'
+      category: 'post_category._ref'
     },
     prepare(selection) {
       console.log('Selection:', selection);
