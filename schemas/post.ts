@@ -86,9 +86,14 @@ export default defineType({
       if (categoryArray && categoryArray.length > 0) {
         const categoryObject = categoryArray[0];
         console.log('Category Object:', categoryObject);
+        console.log('Category Object:', categoryObject.name);
+        console.log('Category Object:', categoryObject.title);
+    
     
         const categoryList = categoryObject.category_list;
         console.log('Category List:', categoryList);
+        console.log('Category List:', categoryList.title);
+        console.log('Category List:', categoryList.name);
     
         const categoryTitle = categoryList ? categoryList.title : 'No Category';
     
