@@ -88,12 +88,17 @@ export default defineType({
         console.log('Category Object:', categoryObject);
         console.log('Category Object:', categoryObject.name);
         console.log('Category Object:', categoryObject.title);
+        console.log('Category List:', categoryObject[0].title);
+        console.log('Category List:', categoryObject[0].name);
     
     
         const categoryList = categoryObject.category_list;
         console.log('Category List:', categoryList);
         console.log('Category List:', categoryList.title);
         console.log('Category List:', categoryList.name);
+        console.log('Category List:', categoryList[0].title);
+        console.log('Category List:', categoryList[0].name);
+        
     
         const categoryTitle = categoryList ? categoryList.title : 'No Category';
     
