@@ -16,11 +16,6 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'orderRank',
-      title: 'orderRank',
-      type: 'string',
-    }),
-    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -74,6 +69,12 @@ export default defineType({
           },
        }
      ]
+    }),
+    defineField({
+      name: 'orderRank',
+      title: 'orderRank',
+      type: 'string',
+      readOnly: true,
     }),
   ],
   preview: {
