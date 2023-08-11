@@ -5,6 +5,9 @@ export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  options: {
+   validation: false,
+  },
   icon,
   fields: [
     defineField({
