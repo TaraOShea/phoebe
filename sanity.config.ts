@@ -8,7 +8,7 @@ import { defaultDocumentNode } from './src/defaultDocumentNode'
 export default defineConfig({
   name: 'default',
   title: 'Phoebe Live Preview',
-
+  validation: false,
   projectId: 'fhc5x7nu',
   dataset: 'production',
 
