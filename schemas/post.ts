@@ -5,6 +5,7 @@ export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  validation: false,
   icon,
   fields: [
     defineField({
@@ -57,7 +58,6 @@ export default defineType({
       type: 'array',
       name: 'images',
       title: 'Images',
-      validation: false,
      of: [
        {
         type: 'image', name: 'image',
